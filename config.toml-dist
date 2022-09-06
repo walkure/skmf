@@ -1,0 +1,15 @@
+[mf]
+email="Moneyforward mail address"
+pass="Moneyforward passwd"
+
+[sk]
+user="Seikyou uid"
+pass="Seikyou passwd"
+
+[skmf]
+mf_subaccount="大学生協(生協カードの情報を登録する 未対応のその他保有資産)"
+mf_large_category="登録するカテゴリ名の大分類"
+mf_middle_category="登録するカテゴリの中分類"
+mf_subaccount_from="チャージ振替登録時の出金元"
+mf_charge_large_category="チャージ登録時の出金元カテゴリ大分類"
+mf_charge_middle_category="チャージ登録時の出金元カテゴリ中分類"

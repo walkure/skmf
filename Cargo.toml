@@ -1,0 +1,28 @@
+[package]
+name = "skmf"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+ureq = {features=["cookies","charset","native-tls"],git="https://github.com/walkure/ureq.git"}
+native-tls = "0.2.10"
+csv = "1.1.6"
+chrono = "0.4.19"
+chrono-tz = "0.6.1"
+# kanaria = "0.1.1"
+unicode-jp = "0.4.0"
+url = "2.2.2"
+parsercher = "3.1.5"
+log = "0.4.0"
+env_logger = "0.9.0"
+
+cookie_store = "0.16"
+
+encoding_rs =  "0.8"
+
+toml = "0.5.9"
+
+serde = "1.0.144"
+serde_derive = "1.0.144"
