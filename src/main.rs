@@ -6,7 +6,7 @@ use chrono::Datelike;
 use chrono::TimeZone;
 use chrono::Utc;
 use chrono_tz::{Asia::Tokyo, Tz};
-
+use argh::FromArgs;
 use mf::send_datum;
 
 #[derive(serde_derive::Deserialize, Debug)]
@@ -26,6 +26,15 @@ struct SkMfConfig {
     mf_charge_middle_category: String,
 }
 
+#[derive(Debug,FromArgs)]
+/// skmf: seikyo to moneyforward data transporter
+struct Args{
+
+    #[argh(option, default = "String::from(\"config.toml\")")]
+    /// path for config file. default value is "config.toml"
+    config:String,
+}
+
 fn main() {
     match do_main() {
         Ok(_) => {}
@@ -34,8 +43,11 @@ fn main() {
 }
 
 fn do_main() -> Result<(), String> {
+    let arg:Args = argh::from_env();
+    println!("using config:{}",arg.config);
+
     let data =
-        std::fs::read_to_string("config.toml").map_err(|e| format!("conf load err:{}", e))?;
+        std::fs::read_to_string(&arg.config).map_err(|e| format!("conf[{}] load err:{}",arg.config,e))?;
     let conf: Config = toml::from_str(&data).map_err(|e| format!("conf load err:{}", e))?;
 
     let mfs = mf::get_mf_session(conf.mf)?;
