@@ -151,6 +151,7 @@ fn create_mf_session(agent: ureq::Agent, user: MfUser) -> Result<MfSession, Stri
     let html = res.into_string().map_err(|e| e.to_string())?;
 
     html.find("グループの追加・編集").ok_or("cannot login")?;
+    let root_dom = parsercher::parse(&html).map_err(|e| e.to_string())?;
 
     return Ok(MfSession {
         agent,
