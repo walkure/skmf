@@ -1,0 +1,10 @@
+[Unit]
+Description=skmf timer
+
+[Timer]
+OnCalendar= 01:22:00
+Persistent=true
+
+[Install]
+WantedBy=timers.target
+

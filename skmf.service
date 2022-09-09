@@ -1,0 +1,13 @@
+[Unit]
+Description=skmf generator
+
+[Service]
+Type=oneshot
+ExecStart=/usr/local/bin/skmf --config /usr/local/etc/skmf.conf
+WorkingDirectory=/var/tmp/
+# protect cookie.json
+UMask=066
+
+[Install]
+WantedBy=multi-user.target
+
