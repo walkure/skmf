@@ -2,6 +2,9 @@
 
 [大学生協プリペイド](https://mp.seikyou.jp/mypage/)の履歴を[Moneyforward ME](https://moneyforward.com/)へ登録します。
 
+
+※ 2023年始の大学生協システム改変でPCから見に行く履歴WebサイトがMFA毎回必須に加えてreCAPTCHAするようになりました。スマホアプリを解析する元気が出るまでお待ち下さい…。
+
 ## build
 
 `cargo build --release`
